@@ -3,7 +3,6 @@ package com.srodrigo.databindingtest.common;
 public abstract class ViewModel<E, V> {
 
 	private final BindingView<E> bindingView;
-
 	private V view;
 
 	public ViewModel(BindingView<E> bindingView) {

@@ -1,9 +1,10 @@
 package com.srodrigo.databindingtest.user;
 
+import com.srodrigo.databindingtest.common.ViewModel;
 import com.srodrigo.databindingtest.model.User;
 import com.srodrigo.databindingtest.modules.user.UserProvider;
 
-public class UserDetailViewModel extends com.srodrigo.databindingtest.common.ViewModel<User, com.srodrigo.databindingtest.user.UserDetailView>
+public class UserDetailViewModel extends ViewModel<User, UserDetailView>
 		implements UserProvider.Callback {
 
 	private User user;
