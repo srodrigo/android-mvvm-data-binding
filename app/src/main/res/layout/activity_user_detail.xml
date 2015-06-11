@@ -4,7 +4,6 @@
     <data>
 
         <import type="android.graphics.Color"/>
-
         <import type="android.view.View"/>
 
         <variable
@@ -21,12 +20,8 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context=".MainActivity">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{userBindingView.name}"/>
+        tools:context=".MainActivity"
+        android:gravity="center">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,24 +31,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@{userBindingView.young ? Color.GREEN : Color.RED}"
-                android:text="@{String.valueOf(userBindingView.age)}"
-                tools:text="31"/>
+                android:text='@{userBindingView.name + " is "}'/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text='@{userBindingView.name + " Is young!"}'
-                android:visibility="@{userBindingView.young ? View.VISIBLE : View.GONE}"
-                tools:text="Is young!"/>
+                android:background="@{userBindingView.young ? Color.GREEN : Color.RED}"
+                android:text="@{String.valueOf(userBindingView.age)}"
+                tools:text="31"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text='@{userBindingView.name + " Is young!"}'
+            android:visibility="@{userBindingView.young ? View.VISIBLE : View.INVISIBLE}"
+            tools:text="Is young!"/>
 
         <Button
             android:id="@+id/refresh_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@android:color/holo_blue_light"
             android:text="Update age"/>
 
     </LinearLayout>
