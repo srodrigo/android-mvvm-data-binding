@@ -6,13 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.srodrigo.databindingtest.common.presentation.BindingViewFactory;
 import com.srodrigo.databindingtest.R;
+import com.srodrigo.databindingtest.common.presentation.BindingViewFactory;
+import com.srodrigo.databindingtest.databinding.ActivityUserDetailBinding;
 import com.srodrigo.databindingtest.user.UserDetailView;
 import com.srodrigo.databindingtest.user.UserDetailViewModel;
-import com.srodrigo.databindingtest.databinding.ActivityMainBinding;
 
-public class UserActivity extends AppCompatActivity implements UserDetailView {
+public class UserDetailActivity extends AppCompatActivity implements UserDetailView {
 
 	private UserDetailViewModel userDetailViewModel;
 
@@ -24,9 +24,9 @@ public class UserActivity extends AppCompatActivity implements UserDetailView {
 		if (savedInstanceState == null) {
 			final UserBindingViewImp userBindingView = BindingViewFactory.createUserBindingView();
 
-			ActivityMainBinding viewDataBinding = DataBindingUtil.setContentView(this,
-					R.layout.activity_main);
-			viewDataBinding.setUser(userBindingView);
+			ActivityUserDetailBinding viewDataBinding = DataBindingUtil.setContentView(this,
+					R.layout.activity_user_detail);
+			viewDataBinding.setUserBindingView(userBindingView);
 
 			refreshButton = (Button) findViewById(R.id.refresh_button);
 			refreshButton.setOnClickListener(new android.view.View.OnClickListener() {
@@ -54,11 +54,6 @@ public class UserActivity extends AppCompatActivity implements UserDetailView {
 	}
 
 	@Override
-	public void initUi() {
-		refreshButton.setVisibility(View.GONE);
-	}
-
-	@Override
 	public void enableUpdateUserAge() {
 		runOnUiThread(new Runnable() {
 			@Override
@@ -66,5 +61,10 @@ public class UserActivity extends AppCompatActivity implements UserDetailView {
 				refreshButton.setVisibility(View.VISIBLE);
 			}
 		});
+	}
+
+	@Override
+	public void disableUpdateUserAge() {
+		refreshButton.setVisibility(View.GONE);
 	}
 }

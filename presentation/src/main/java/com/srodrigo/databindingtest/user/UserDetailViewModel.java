@@ -7,9 +7,8 @@ import com.srodrigo.databindingtest.modules.user.UserProvider;
 public class UserDetailViewModel extends ViewModel<User, UserDetailView>
 		implements UserProvider.Callback {
 
-	private User user;
-
 	private final UserProvider userProvider;
+	private User user;
 
 	public UserDetailViewModel(UserBindingView userBindingView, UserProvider userProvider) {
 		super(userBindingView);
@@ -17,9 +16,9 @@ public class UserDetailViewModel extends ViewModel<User, UserDetailView>
 		this.userProvider.setCallback(this);
 	}
 
-	public void attachView(com.srodrigo.databindingtest.user.UserDetailView view) {
+	public void attachView(UserDetailView view) {
 		super.attachView(view);
-		this.getView().initUi();
+		this.getView().disableUpdateUserAge();
 	}
 
 	public void onRefresh() {

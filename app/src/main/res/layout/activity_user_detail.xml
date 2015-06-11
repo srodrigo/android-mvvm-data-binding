@@ -8,7 +8,7 @@
         <import type="android.view.View"/>
 
         <variable
-            name="user"
+            name="userBindingView"
             type="com.srodrigo.databindingtest.modules.user.UserBindingViewImp"/>
     </data>
 
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.name}"/>
+            android:text="@{userBindingView.name}"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,16 +36,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@{user.young ? Color.GREEN : Color.RED}"
-                android:text="@{String.valueOf(user.age)}"
+                android:background="@{userBindingView.young ? Color.GREEN : Color.RED}"
+                android:text="@{String.valueOf(userBindingView.age)}"
                 tools:text="31"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text='@{user.name + " Is young!"}'
-                android:visibility="@{user.young ? View.VISIBLE : View.GONE}"
+                android:text='@{userBindingView.name + " Is young!"}'
+                android:visibility="@{userBindingView.young ? View.VISIBLE : View.GONE}"
                 tools:text="Is young!"/>
 
         </LinearLayout>
