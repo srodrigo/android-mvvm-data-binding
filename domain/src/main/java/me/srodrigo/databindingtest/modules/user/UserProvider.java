@@ -10,7 +10,7 @@ public final class UserProvider {
 
 	public void provideUser() {
 		simulateDelay();
-		callback.onUserRetrieved(new me.srodrigo.databindingtest.model.User("Sergio", 31));
+		callback.onUserRetrieved(new me.srodrigo.databindingtest.model.User("User", 20));
 	}
 
 	private void simulateDelay() {
