@@ -6,7 +6,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.srodrigo.databindingtest"
+        applicationId "me.srodrigo.databindingtest"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1

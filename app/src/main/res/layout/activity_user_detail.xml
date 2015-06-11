@@ -9,7 +9,7 @@
 
         <variable
             name="userBindingView"
-            type="com.srodrigo.databindingtest.modules.user.UserBindingViewImp"/>
+            type="me.srodrigo.databindingtest.modules.user.UserBindingViewImp"/>
     </data>
 
     <LinearLayout
