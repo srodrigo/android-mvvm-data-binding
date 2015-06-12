@@ -3,6 +3,8 @@ package me.srodrigo.databindingtest.model;
 import java.util.Random;
 
 public final class User {
+	private static final int YOUNG_LIMIT = 30;
+	private static final int AGE_LIMIT = 100;
 	private final String name;
 	private final int age;
 
@@ -12,7 +14,7 @@ public final class User {
 	}
 
 	public boolean isYoung() {
-		return age < 30;
+		return age < YOUNG_LIMIT;
 	}
 
 	public String getName() {
@@ -28,6 +30,6 @@ public final class User {
 	}
 
 	private int generateRandomAge() {
-		return new Random().nextInt();
+		return new Random().nextInt((AGE_LIMIT - 1) + 1) + 1;
 	}
 }
